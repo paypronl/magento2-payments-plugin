@@ -11,11 +11,11 @@ use Magento\PayProPaymentGateway\Gateway;
 /**
  * Class ConfigProvider
  */
-final class ConfigProvider implements ConfigProviderInterface
+class ConfigProvider implements ConfigProviderInterface
 {
 	private $cache;
 	private $gateway;
-	
+
 	public function __construct(
 		CacheInterface $cache,
 		Gateway $gateway
