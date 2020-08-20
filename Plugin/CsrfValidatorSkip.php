@@ -1,6 +1,5 @@
 <?php
 
-
 namespace PayPro\PaymentGateway\Plugin;
 
 /**
