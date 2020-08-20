@@ -1,7 +1,6 @@
 <?php
 
-namespace Magento\PayProPaymentGateway\Model\Methods;
-
+namespace PayPro\PaymentGateway\Model\Methods;
 
 class SofortDigital extends PayPro
 {

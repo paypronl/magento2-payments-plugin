@@ -1,11 +1,9 @@
 <?php
 
-
-namespace Magento\PayProPaymentGateway\Controller\Callback;
+namespace PayPro\PaymentGateway\Controller\Callback;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
-use Magento\PayProPaymentGateway\Gateway;
 use Magento\Sales\Api\OrderRepositoryInterface;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Service\InvoiceService;
@@ -13,6 +11,7 @@ use Magento\Framework\DB\Transaction;
 use Magento\Sales\Model\Order\Email\Sender\InvoiceSender;
 use Magento\Framework\Controller\Result\JsonFactory;
 
+use PayPro\PaymentGateway\Plugin\Gateway;
 
 class Index extends Action {
 

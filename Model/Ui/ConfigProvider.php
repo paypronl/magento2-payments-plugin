@@ -1,21 +1,21 @@
 <?php
 
-
-namespace Magento\PayProPaymentGateway\Model\Ui;
+namespace PayPro\PaymentGateway\Model\Ui;
 
 use Magento\Framework\App\CacheInterface;
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\PayProPaymentGateway\Gateway;
+
+use PayPro\PaymentGateway\Plugin\Gateway;
 
 /**
  * Class ConfigProvider
  */
-final class ConfigProvider implements ConfigProviderInterface
+class ConfigProvider implements ConfigProviderInterface
 {
 	private $cache;
 	private $gateway;
-	
+
 	public function __construct(
 		CacheInterface $cache,
 		Gateway $gateway
@@ -32,9 +32,12 @@ final class ConfigProvider implements ConfigProviderInterface
 			return json_decode($cachedIssuers, true);
 		}
 
-		// Cache the issuers for a day
-		$issuers = $this->gateway->getIdealIssuers();
-		$this->cache->save(json_encode($issuers), $cacheKey, [], 60 * 60 * 24);
+		$issuers = $this->gateway->getIdealIssuers() ?? [];
+
+		// Cache the issuers for a day if array not empty
+		if (!empty($issuers)) {
+			$this->cache->save(json_encode($issuers), $cacheKey, [], 60 * 60 * 24);
+		}
 
 		return $issuers;
 	}

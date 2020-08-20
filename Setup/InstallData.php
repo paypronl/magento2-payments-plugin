@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Magento\PayProPaymentGateway\Setup;
-
+namespace PayPro\PaymentGateway\Setup;
 
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
