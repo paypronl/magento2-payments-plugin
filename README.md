@@ -22,27 +22,46 @@ With this plugin you easily add all PayPro payment gateways to your Magento 2 we
 - PHP version 7.2 or greater
 - Magento 2.3+
 
-## Installation
+## Install the module using Composer
+Magento 2 uses Composer to manage module dependencies. We can also use Composer to install the module.
 
-TBD
+1. Run the following command in your Magento directory:
+   ```shell
+   $ composer require paypro/magento2
+   ```
 
-### Support
+2. Run the setup command of Magento:
+   ```shell
+   $ php bin/magento setup:upgrade
+   > php bin/magento cache:clean
+   ```
 
-Do you need help installing the PayPro plugin, please contact support@paypro.nl.
+3. If you run Magento in production mode make sure to recompile the static files:
+   ```shell
+   $ php bin/magento setup:di:compile
+   > php bin/magento setup:static-content:deploy
+   ```
 
-## FAQ
+## Module setup
+After installation we need to setup the module correctly to start processing payments.
 
-#### Where do I find my PayPro API key?
+1. First go to your Magento admin portal and go to **Stores** -> **Configuration** -> **Sales** -> **Payment Methods** -> **Other Payment Methods**
 
-You can find your PayPro API key at [https://www.paypro.nl/api](https://www.paypro.nl/api) or in your dashboard at 'Webshop Koppelen'
+   Here you should see PayPro Gateway and PayPro iDEAL, as well as other PayPro payment methods.
 
-#### When do I need to add a product ID?
+2. We need to fill in an API key in the PayPro gateway settings. You can find your PayPro API key in your [Webshop Koppelen](https://www.paypro.nl/koppelen/webshops) or in [API Keys](https://www.paypro.nl/api/keys).
 
-When you use affiliate marketing or you want to use the mastercard or visa gateway, you have to add a product ID.
+   If you want to use Affiliate Marketing or Mastercard and Visa you also have to supply your Product ID.
 
-#### Where do I find my product ID?
+3. Enable **PayPro iDEAL** or any other PayPro payment method by setting **Enabled** to **Yes**.
 
-You can find your product ID at 'Webshop Koppelen'.
+4.  Make sure to click the **Save Config** button.
+
+5. That's it! You should now see the enabled payment methods during the checkout process.
+
+## Support
+
+If you need help with installing the module, please contact [support@paypro.nl](mailto:support@paypro.nl).
 
 ## Contributing
 
