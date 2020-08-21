@@ -61,7 +61,7 @@ After installation we need to setup the module correctly to start processing pay
 
 ## Support
 
-If you need help with installing the module, please contact [support@paypro.nl](mailto:support@paypro.nl)
+If you need help with installing the module, please contact [support@paypro.nl](mailto:support@paypro.nl).
 
 ## Contributing
 
