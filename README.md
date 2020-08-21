@@ -20,48 +20,11 @@ With this plugin you easily add all PayPro payment gateways to your Magento 2 we
 ## Requirements
 
 - PHP version 7.2 or greater
-- PHP extension BC Math
-- PHP extension Ctype
-- PHP extension cUrl
-- PHP extension DOM
-- PHP extension GD
-- PHP extension Hash
-- PHP extension iconv
-- PHP extension Intl
-- PHP extension lib-libxml
-- PHP extension Mbstring
-- PHP extension OpenSSL
-- PHP extension PDO MySQL
-- PHP extension simpleXML
-- PHP extension SOAP
-- PHP extension XSL
-- PHP extension Zip
+- Magento 2.3+
 
 ## Installation
 
-1. Unpack plugin archive under **magento2-dir**/app/code, full path should look like **magento2-dir**/app/code/Magento/PayProPaymentGateway
-
-2. Run the following commands to install the module:
-
-```shell
-cd magento2-dir
-sudo composer require paypro/paypro-php-v1
-sudo bin/magento setup:upgrade
-sudo bin/magento cache:clean
-```
-
-3. Restore permissions
-
-```shell
-sudo chown -R www-data:www-data magento2-dir/
-sudo chmod -R 755 magento2-dir/
-```
-
-4. (Optional) Refresh indexes
-
-```shell
-sudo bin/magento indexer:reindex
-```
+TBD
 
 ### Support
 
