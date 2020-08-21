@@ -26,18 +26,18 @@ With this plugin you easily add all PayPro payment gateways to your Magento 2 we
 Magento 2 uses Composer to manage module dependencies. We can also use Composer to install the module.
 
 1. Run the following command in your Magento directory:
-   ```
+   ```shell
    $ composer require paypro/magento2
    ```
 
 2. Run the setup command of Magento:
-   ```
+   ```shell
    $ php bin/magento setup:upgrade
    > php bin/magento cache:clean
    ```
 
 3. If you run Magento in production mode make sure to recompile the static files:
-   ```
+   ```shell
    $ php bin/magento setup:di:compile
    > php bin/magento setup:static-content:deploy
    ```
