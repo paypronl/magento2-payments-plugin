@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Magento\PayProPaymentGateway\Controller\Redirect;
-
+namespace PayPro\PaymentGateway\Controller\Redirect;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
@@ -10,8 +8,7 @@ use Magento\Sales\Api\OrderRepositoryInterface;
 use Magento\Payment\Helper\Data as PaymentHelper;
 use Magento\Checkout\Model\Session;
 use Magento\Sales\Model\Order;
-use Magento\PayProPaymentGateway\Gateway;
-
+use PayPro\PaymentGateway\Plugin\Gateway;
 
 class Index extends Action {
 

@@ -1,11 +1,11 @@
 <?php
 
-
-namespace Magento\PayProPaymentGateway;
+namespace PayPro\PaymentGateway\Plugin;
 
 use Magento\Framework\UrlInterface;
 use Magento\Sales\Model\Order;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+
 use PayPro\Client;
 
 class Gateway {

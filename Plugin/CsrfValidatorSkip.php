@@ -1,14 +1,13 @@
 <?php
 
-
-namespace Magento\PayProPaymentGateway;
+namespace PayPro\PaymentGateway\Plugin;
 
 /**
  * Class CsrfValidatorSkip
  * 
  * https://gist.github.com/ananth-iyer/59ecfabcbca73d6c2e3eeb986ed2f3c4
  * 
- * @package Magento\PayProPaymentGateway
+ * @package PayPro\PaymentGateway
  */
 class CsrfValidatorSkip
 {

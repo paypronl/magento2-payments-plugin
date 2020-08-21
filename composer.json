@@ -1,10 +1,25 @@
 {
   "name": "paypro/magento2",
-  "type": "library",
   "description": "PayPro Payment Module for Magento 2",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "type": "magento2-module",
+  "keywords": [
+    "paypro",
+    "payment",
+    "service",
+    "magento 2",
+    "magento2"
+  ],
+  "homepage": "https://www.paypro.nl",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "PayPro",
+      "homepage": "https://www.paypro.nl"
+    }
+  ],
   "require": {
-    "php": "~7.2.0|~7.3.0",
+    "php": ">=7.0",
     "paypro/paypro-php-v1": "^1.0"
   },
   "autoload": {
@@ -12,7 +27,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "Magento\\PayProPaymentGateway\\": ""
+      "PayPro\\PaymentGateway\\": ""
     }
   }
 }

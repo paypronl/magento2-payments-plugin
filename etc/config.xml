@@ -4,13 +4,13 @@
         <payment>
             <paypro_gateway>
                 <testmode>0</testmode>
-                <model>Magento\PayProPaymentGateway\Model\Methods\Gateway</model>
+                <model>PayPro\PaymentGateway\Model\Methods\Gateway</model>
                 <api_key/>
                 <product_id/>
             </paypro_gateway>
             <paypro_afterpay>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\Afterpay</model>
+                <model>PayPro\PaymentGateway\Model\Methods\Afterpay</model>
                 <title>Afterpay</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
@@ -25,7 +25,7 @@
             </paypro_afterpay>
             <paypro_bancontact>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\Bancontact</model>
+                <model>PayPro\PaymentGateway\Model\Methods\Bancontact</model>
                 <title>Bancontact</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
@@ -40,7 +40,7 @@
             </paypro_bancontact>
             <paypro_ideal>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\Ideal</model>
+                <model>PayPro\PaymentGateway\Model\Methods\Ideal</model>
                 <title>iDEAL</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
@@ -55,7 +55,7 @@
             </paypro_ideal>
             <paypro_mastercard>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\Mastercard</model>
+                <model>PayPro\PaymentGateway\Model\Methods\Mastercard</model>
                 <title>Mastercard</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
@@ -70,7 +70,7 @@
             </paypro_mastercard>
             <paypro_paypal>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\Paypal</model>
+                <model>PayPro\PaymentGateway\Model\Methods\Paypal</model>
                 <title>Paypal</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
@@ -85,7 +85,7 @@
             </paypro_paypal>
             <paypro_sepa>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\Sepa</model>
+                <model>PayPro\PaymentGateway\Model\Methods\Sepa</model>
                 <title>Banktransfer</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
@@ -100,7 +100,7 @@
             </paypro_sepa>
             <paypro_sepa_once>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\SepaOnce</model>
+                <model>PayPro\PaymentGateway\Model\Methods\SepaOnce</model>
                 <title>Direct Debit</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
@@ -115,7 +115,7 @@
             </paypro_sepa_once>
             <paypro_sofort_digital>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\SofortDigital</model>
+                <model>PayPro\PaymentGateway\Model\Methods\SofortDigital</model>
                 <title>Sofort Digital</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
@@ -130,7 +130,7 @@
             </paypro_sofort_digital>
             <paypro_sofort_physical>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\SofortPhysical</model>
+                <model>PayPro\PaymentGateway\Model\Methods\SofortPhysical</model>
                 <title>Sofort Physical</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
@@ -145,7 +145,7 @@
             </paypro_sofort_physical>
             <paypro_visa>
                 <active>0</active>
-                <model>Magento\PayProPaymentGateway\Model\Methods\Visa</model>
+                <model>PayPro\PaymentGateway\Model\Methods\Visa</model>
                 <title>Visa</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>

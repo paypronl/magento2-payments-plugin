@@ -3,11 +3,11 @@
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
             <argument name="configProviders" xsi:type="array">
-                <item name="paypro_gateway_config_provider" xsi:type="object">Magento\PayProPaymentGateway\Model\Ui\ConfigProvider</item>
+                <item name="paypro_gateway_config_provider" xsi:type="object">PayPro\PaymentGateway\Model\Ui\ConfigProvider</item>
             </argument>
         </arguments>
     </type>
-    <type name="Magento\PayProPaymentGateway\Block\Info">
+    <type name="PayPro\PaymentGateway\Block\Info">
         <arguments>
             <argument name="data" xsi:type="array">
                 <item xsi:type="string" name="is_secure_mode">1</item>
@@ -15,6 +15,6 @@
         </arguments>
     </type>
     <type name="Magento\Framework\App\Request\CsrfValidator">
-        <plugin name="csrf_validator_skip" type="Magento\PayProPaymentGateway\CsrfValidatorSkip" />
+        <plugin name="csrf_validator_skip" type="PayPro\PaymentGateway\Plugin\CsrfValidatorSkip" />
     </type>
 </config>

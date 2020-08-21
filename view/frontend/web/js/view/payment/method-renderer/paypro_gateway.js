@@ -8,7 +8,7 @@ define(
 
         return Component.extend({
             defaults: {
-                template: 'Magento_PayProPaymentGateway/payment/form',
+                template: 'PayPro_PaymentGateway/payment/form',
                 selectedIssuer: ''
             },
 

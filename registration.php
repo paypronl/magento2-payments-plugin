@@ -2,6 +2,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
 	\Magento\Framework\Component\ComponentRegistrar::MODULE,
-	'Magento_PayProPaymentGateway',
+	'PayPro_PaymentGateway',
 	__DIR__
 );

@@ -1,7 +1,6 @@
 <?php
 
-
-namespace Magento\PayProPaymentGateway\Controller\StartPayment;
+namespace PayPro\PaymentGateway\Controller\StartPayment;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\Locale\Resolver;
@@ -10,8 +9,8 @@ use Magento\Sales\Model\Order;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\Result\RedirectFactory;
-use Magento\PayProPaymentGateway\Gateway;
 
+use PayPro\PaymentGateway\Plugin\Gateway;
 
 class Index extends Action {
 
