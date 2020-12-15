@@ -66,7 +66,7 @@ class Index extends Action {
 		$billingAddress = $order->getBillingAddress();
 
 		$response = $this->gateway->createPayment(array_merge([
-			'amount' => intval($order->getGrandTotal()) * 100,
+			'amount' => (int) (round($order->getGrandTotal() * 100, 0)),
 			'return_url' => $redirectUrl,
 			'cancel_url' => $redirectUrl,
 			'postback_url' => $this->urlBuilder->getRouteUrl('paypro/callback'),
