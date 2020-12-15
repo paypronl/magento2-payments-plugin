@@ -5,5 +5,5 @@ namespace PayPro\PaymentGateway\Model\Methods;
 class Mastercard extends PayPro
 {
 	protected $_code = 'paypro_mastercard';
-	protected $payMethodCode = 'paypal/redirect';
+	protected $payMethodCode = 'creditcard/mastercard';
 }
