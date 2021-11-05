@@ -91,12 +91,12 @@ class Index extends Action {
 		}
 
 		$order
-			->setPayproPaymentHash($response['payment_hash'])
+			->setPayproPaymentHash($response['return']['payment_hash'])
 			->setState(Order::STATE_PENDING_PAYMENT)
 			->setStatus(Order::STATE_PENDING_PAYMENT)
 			->save();
 
-		return $this->resultRedirectFactory->create()->setUrl($response['payment_url']);
+		return $this->resultRedirectFactory->create()->setUrl($response['return']['payment_url']);
 	}
 
 	private function getLocale() {
