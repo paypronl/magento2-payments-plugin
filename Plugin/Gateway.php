@@ -40,7 +40,7 @@ class Gateway {
 	 *
 	 * @param $data
 	 *
-	 * @return bool|mixed|null
+	 * @return Array
 	 */
 	public function createPayment($data) {
 		$params = array_merge($data, [
@@ -57,10 +57,10 @@ class Gateway {
 
 		try {
 			$response = $this->client->execute();
-
-			return $response['return'];
+			if ($response['return'] === 'API key not valid') $response = array('errors' => 'true', 'return' => self::getUserFriendlyError($repsonse['return']));
+			return $response;
 		} catch (\Exception $exception) {
-			return false;
+			return array('errors' => 'true', 'return' => self::getUserFriendlyError(''));
 		}
 	}
 
@@ -102,5 +102,25 @@ class Gateway {
 		} catch (\Exception $exception) {
 			return null;
 		}
+	}
+
+	/**
+	 * change api response error to userfriendly error message
+	 *
+	 * @param responseError from api
+	 *
+	 * @return String
+	 */
+	public function getUserFriendlyError($responseError) {
+		switch ($responseError) {
+			case 'Not subscribed to money transfer service':
+				$newMessage = _('Can\'t use this payment method, please try a different method.');
+				break;
+			
+			default:
+				$newMessage = _('Something went wrong during checkout, please try again.');
+				break;
+		}
+		return $newMessage;
 	}
 }

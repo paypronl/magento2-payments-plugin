@@ -84,6 +84,12 @@ class Index extends Action {
 			'consumer_postal' => $billingAddress->getPostcode(),
 		], $data));
 
+		if ($response['errors'] === 'true') {
+			$this->checkoutSession->restoreQuote();
+			$this->messageManager->addNoticeMessage($this->gateway->getUserFriendlyError($response['return']));
+			return $this->resultRedirectFactory->create()->setUrl('/checkout/cart');
+		}
+
 		$order
 			->setPayproPaymentHash($response['payment_hash'])
 			->setState(Order::STATE_PENDING_PAYMENT)
