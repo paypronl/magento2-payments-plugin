@@ -126,7 +126,7 @@
                 <can_cancel>1</can_cancel>
                 <can_use_checkout>1</can_use_checkout>
                 <is_gateway>1</is_gateway>
-                <sort_order>9</sort_order>
+                <sort_order>8</sort_order>
             </paypro_sofort>
             <paypro_visa>
                 <active>0</active>
@@ -141,7 +141,7 @@
                 <can_cancel>1</can_cancel>
                 <can_use_checkout>1</can_use_checkout>
                 <is_gateway>1</is_gateway>
-                <sort_order>10</sort_order>
+                <sort_order>9</sort_order>
             </paypro_visa>
         </payment>
     </default>
