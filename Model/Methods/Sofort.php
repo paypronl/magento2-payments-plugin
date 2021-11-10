@@ -2,8 +2,8 @@
 
 namespace PayPro\PaymentGateway\Model\Methods;
 
-class SofortPhysical extends PayPro
+class Sofort extends PayPro
 {
-	protected $_code = 'paypro_sofort_physical';
+	protected $_code = 'paypro_sofort';
 	protected $payMethodCode = 'sofort/physical';
 }
