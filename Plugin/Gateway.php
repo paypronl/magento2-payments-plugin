@@ -57,10 +57,10 @@ class Gateway {
 
 		try {
 			$response = $this->client->execute();
-			if ($response['return'] === 'API key not valid') $response = array('errors' => 'true', 'return' => self::getUserFriendlyError($repsonse['return']));
+			if ($response['return'] === 'API key not valid') $response['errors'] = 'true';
 			return $response;
 		} catch (\Exception $exception) {
-			return array('errors' => 'true', 'return' => self::getUserFriendlyError());
+			return array('errors' => 'true', 'return' => '');
 		}
 	}
 
