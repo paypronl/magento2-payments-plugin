@@ -60,7 +60,7 @@ class Gateway {
 			if ($response['return'] === 'API key not valid') $response = array('errors' => 'true', 'return' => self::getUserFriendlyError($repsonse['return']));
 			return $response;
 		} catch (\Exception $exception) {
-			return array('errors' => 'true', 'return' => self::getUserFriendlyError(''));
+			return array('errors' => 'true', 'return' => self::getUserFriendlyError());
 		}
 	}
 
@@ -111,12 +111,12 @@ class Gateway {
 	 *
 	 * @return String
 	 */
-	public function getUserFriendlyError($responseError) {
+	public function getUserFriendlyError($responseError = '') {
 		switch ($responseError) {
 			case 'Not subscribed to money transfer service':
+			case 'API key not valid':
 				$newMessage = _('Can\'t use this payment method, please try a different method.');
 				break;
-			
 			default:
 				$newMessage = _('Something went wrong during checkout, please try again.');
 				break;
