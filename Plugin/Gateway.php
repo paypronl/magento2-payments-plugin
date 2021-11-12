@@ -20,6 +20,9 @@ class Gateway {
 	/** @var UrlInterface */
 	private $urlBuilder;
 
+	protected const CLIENTRESPONSE_APIKEYINVALID = "API key not valid";
+	protected const CLIENTRESPONSE_NOTSUBSCRIPTED = "Not subscribed to money transfer service";
+
 	public function __construct(
 		ScopeConfigInterface $scopeConfig,
 		UrlInterface $urlBuilder
@@ -57,7 +60,9 @@ class Gateway {
 
 		try {
 			$response = $this->client->execute();
-			if ($response['return'] === 'API key not valid') $response['errors'] = 'true';
+			
+			if ($response['return'] === self::CLIENTRESPONSE_APIKEYINVALID) $response['errors'] = 'true';
+
 			return $response;
 		} catch (\Exception $exception) {
 			return array('errors' => 'true', 'return' => '');
@@ -113,8 +118,8 @@ class Gateway {
 	 */
 	public function getUserFriendlyError($responseError = '') {
 		switch ($responseError) {
-			case 'Not subscribed to money transfer service':
-			case 'API key not valid':
+			case self::CLIENTRESPONSE_NOTSUBSCRIPTED:
+			case self::CLIENTRESPONSE_APIKEYINVALID:
 				$newMessage = _("Can't use this payment method, please try a different method.");
 				break;
 			default:
