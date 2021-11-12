@@ -115,10 +115,10 @@ class Gateway {
 		switch ($responseError) {
 			case 'Not subscribed to money transfer service':
 			case 'API key not valid':
-				$newMessage = _('Can\'t use this payment method, please try a different method.');
+				$newMessage = _("Can't use this payment method, please try a different method.");
 				break;
 			default:
-				$newMessage = _('Something went wrong during checkout, please try again.');
+				$newMessage = _("Something went wrong during checkout, please try again.");
 				break;
 		}
 		return $newMessage;
