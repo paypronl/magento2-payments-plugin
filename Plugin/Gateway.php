@@ -65,7 +65,7 @@ class Gateway {
 
 			return $response;
 		} catch (\Exception $exception) {
-			return array('errors' => 'true', 'return' => '');
+			return array('errors' => 'true', 'return' => 'Invalid return from the API');
 		}
 	}
 
