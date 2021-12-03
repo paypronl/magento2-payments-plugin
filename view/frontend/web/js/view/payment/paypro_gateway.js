@@ -59,7 +59,7 @@ define(
 
         rendererList.push(
             {
-                type: 'paypro_sofort',
+                type: 'paypro_sofort_physical',
                 component: 'PayPro_PaymentGateway/js/view/payment/method-renderer/paypro_gateway'
             }
         );
