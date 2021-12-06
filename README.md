@@ -11,9 +11,10 @@ With this plugin you easily add all PayPro payment gateways to your Magento 2 we
 - Banktransfer
 - Direct Debit
 - iDEAL
-- Creditcard
+- Mastercard
 - PayPal
 - Sofort
+- Visa
 
 ## Requirements
 
