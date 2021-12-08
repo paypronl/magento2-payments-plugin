@@ -20,6 +20,9 @@ class Gateway {
 	/** @var UrlInterface */
 	private $urlBuilder;
 
+	protected const CLIENTRESPONSE_APIKEYINVALID = "API key not valid";
+	protected const CLIENTRESPONSE_NOTSUBSCRIPTED = "Not subscribed to money transfer service";
+
 	public function __construct(
 		ScopeConfigInterface $scopeConfig,
 		UrlInterface $urlBuilder
@@ -40,7 +43,7 @@ class Gateway {
 	 *
 	 * @param $data
 	 *
-	 * @return bool|mixed|null
+	 * @return Array
 	 */
 	public function createPayment($data) {
 		$params = array_merge($data, [
@@ -57,10 +60,12 @@ class Gateway {
 
 		try {
 			$response = $this->client->execute();
+			
+			if ($response['return'] === self::CLIENTRESPONSE_APIKEYINVALID) $response['errors'] = 'true';
 
-			return $response['return'];
+			return $response;
 		} catch (\Exception $exception) {
-			return false;
+			return ['errors' => 'true', 'return' => 'Invalid return from the API'];
 		}
 	}
 
@@ -102,5 +107,25 @@ class Gateway {
 		} catch (\Exception $exception) {
 			return null;
 		}
+	}
+
+	/**
+	 * change api response error to userfriendly error message
+	 *
+	 * @param responseError from api
+	 *
+	 * @return String
+	 */
+	public function getUserFriendlyError($responseError = '') {
+		switch ($responseError) {
+			case self::CLIENTRESPONSE_NOTSUBSCRIPTED:
+			case self::CLIENTRESPONSE_APIKEYINVALID:
+				$newMessage = _("Can't use this payment method, please try a different method.");
+				break;
+			default:
+				$newMessage = _("Something went wrong during checkout, please try again.");
+				break;
+		}
+		return $newMessage;
 	}
 }
