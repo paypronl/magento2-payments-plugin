@@ -84,13 +84,19 @@ class Index extends Action {
 			'consumer_postal' => $billingAddress->getPostcode(),
 		], $data));
 
+		if ($response['errors'] === 'true') {
+			$this->checkoutSession->restoreQuote();
+			$this->messageManager->addNoticeMessage($this->gateway->getUserFriendlyError($response['return']));
+			return $this->resultRedirectFactory->create()->setUrl('/checkout/cart');
+		}
+
 		$order
-			->setPayproPaymentHash($response['payment_hash'])
+			->setPayproPaymentHash($response['return']['payment_hash'])
 			->setState(Order::STATE_PENDING_PAYMENT)
 			->setStatus(Order::STATE_PENDING_PAYMENT)
 			->save();
 
-		return $this->resultRedirectFactory->create()->setUrl($response['payment_url']);
+		return $this->resultRedirectFactory->create()->setUrl($response['return']['payment_url']);
 	}
 
 	private function getLocale() {
