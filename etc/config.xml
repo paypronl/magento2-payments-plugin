@@ -113,10 +113,10 @@
                 <is_gateway>1</is_gateway>
                 <sort_order>7</sort_order>
             </paypro_sepa_once>
-            <paypro_sofort_digital>
+            <paypro_sofort_physical>
                 <active>0</active>
-                <model>PayPro\PaymentGateway\Model\Methods\SofortDigital</model>
-                <title>Sofort Digital</title>
+                <model>PayPro\PaymentGateway\Model\Methods\SofortPhysical</model>
+                <title>Sofort</title>
                 <order_status>pending_payment</order_status>
                 <currency>EUR</currency>
                 <can_authorize>0</can_authorize>
@@ -127,21 +127,6 @@
                 <can_use_checkout>1</can_use_checkout>
                 <is_gateway>1</is_gateway>
                 <sort_order>8</sort_order>
-            </paypro_sofort_digital>
-            <paypro_sofort_physical>
-                <active>0</active>
-                <model>PayPro\PaymentGateway\Model\Methods\SofortPhysical</model>
-                <title>Sofort Physical</title>
-                <order_status>pending_payment</order_status>
-                <currency>EUR</currency>
-                <can_authorize>0</can_authorize>
-                <can_capture>0</can_capture>
-                <can_void>0</can_void>
-                <can_refund>0</can_refund>
-                <can_cancel>1</can_cancel>
-                <can_use_checkout>1</can_use_checkout>
-                <is_gateway>1</is_gateway>
-                <sort_order>9</sort_order>
             </paypro_sofort_physical>
             <paypro_visa>
                 <active>0</active>
@@ -156,7 +141,7 @@
                 <can_cancel>1</can_cancel>
                 <can_use_checkout>1</can_use_checkout>
                 <is_gateway>1</is_gateway>
-                <sort_order>10</sort_order>
+                <sort_order>9</sort_order>
             </paypro_visa>
         </payment>
     </default>
